@@ -28,5 +28,5 @@ Copy them to the {mamba_base}/proseq/bin folder
 - run
 ```
 mamba activate proseq
-chroseq.sh 
+bash chroseq.sh 
 ```
