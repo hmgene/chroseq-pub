@@ -18,8 +18,8 @@ The pipelines depend on several common bioinformatics tools:
  bedops (https://bedops.readthedocs.io/en/latest/)
  bedGraphToBigWig (from the Kent source utilities http://hgdownload.cse.ucsc.edu/admin/exe/)
 ```
-Copy them to the {mamba_base}/proseq/bin folder
-{mamba_base} := mamba base after activating the environmen
+
+- make PATH to the above tools 
 
 - run
 ```
