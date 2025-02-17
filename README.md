@@ -1,8 +1,6 @@
 # chroseq-pub
 - source code reference: https://github.com/Danko-Lab/proseq2.0
 
-- install prerequisite
-
 - install proseq2 and dependent tools 
 https://github.com/Danko-Lab/proseq2.0
 
