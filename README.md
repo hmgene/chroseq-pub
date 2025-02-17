@@ -2,10 +2,6 @@
 - source code reference: https://github.com/Danko-Lab/proseq2.0
 
 - install prerequisite
-```
-mamba env create -f proseq_env.yml
-mamba activate proseq
-```
 
 - install proseq2 and dependent tools 
 https://github.com/Danko-Lab/proseq2.0
@@ -27,6 +23,5 @@ Copy them to the {mamba_base}/proseq/bin folder
 
 - run
 ```
-mamba activate proseq
 bash chroseq.sh 
 ```
