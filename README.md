@@ -3,7 +3,7 @@
 
 - make a virtual env
 ```
-mamba create -n proseq
+mamba create -n proseq -f 
 mamba activate proseq
 ```
 - install proseq2 and dependent tools 
@@ -21,10 +21,19 @@ The pipelines depend on several common bioinformatics tools:
  bedops (https://bedops.readthedocs.io/en/latest/)
  bedGraphToBigWig (from the Kent source utilities http://hgdownload.cse.ucsc.edu/admin/exe/)
 ```
-
 - make PATH to the above tools 
+- modify hard-coded environments in chroseq.sh
+```
+output=/mnt/vstor/SOM_GENE_BEG33/ChRO_seq/hg38/DATA/$sample
+rna_home=$output/rna
+# RSEM index
+x=/mnt/vstor/SOM_GENE_BEG33/RNA_seq/hg38/ref/RSEM_hg38/GCF_000001405.39_GRCh38.p13_genomic.primary_assembly.fna
+# BWA index
+bwaIndex=/mnt/vstor/SOM_GENE_BEG33/mamba/db/hg38/hg38.fa
+
+```
 
 - run
 ```
-bash chroseq.sh 
+bash chroseq.sh <sample> [<output_dir>]
 ```
