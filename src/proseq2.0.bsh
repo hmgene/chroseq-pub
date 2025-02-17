@@ -410,7 +410,7 @@ if [ ! -d $TMPDIR ]; then
   mkdir $TMPDIR
 fi
 # bash generate random 32 character alphanumeric string (upper and lowercase).
-tmp=tmp #HMK `cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
+tmp=tmp 
 TMPR=$TMPDIR
 TMPDIR=$TMPDIR/$tmp
 if [ -z "$thread" ]; then
@@ -983,7 +983,6 @@ if [[ ${map_L} != 0 ]]; then
 fi
 
 ## Cleanup.
-#HMK rm -r ${TMPDIR}/noadapt
 gzip ${TMPDIR}/passQC*/*.fastq
 
 

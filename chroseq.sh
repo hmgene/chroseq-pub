@@ -1,6 +1,6 @@
 #!/bin/bash
 # Author : Hyunmin Kim 
-# Date : 02/12/2025
+# Date : 02/17/2025
 
 usage="$BASH_SOURCE <sample_name> [output]"
 if [ $# -lt 1 ];then echo "$usage";exit ;fi
@@ -43,15 +43,13 @@ rna_home=$output/rna
 source activate proseq
 o=$output/temp/tmp/passQC/${sample}_dedup_QC_end_1.fastq.gz
 if [ ! -f $o -a  -f $input -a -f "${input/_R1/_R2}" ];then
-	#bash $BASEDIR/proseq2.0.bsh \
 	echo "paired"
-	proseq2.0 \
+	bash $BASEDIR/proseq2.0.bsh \
 	--thread=20 -i $bwaIndex -c $chromInfo -PE -T $output/temp -O $output --UMI1=6 -I ${input%_R1.*} \
 	--RNA3=R1_5prime --UMI1=6 --ADAPT2=TGGAATTCTCGGGTGCCAAGG --ADAPT1=GATCGTCGGACTGTAGAACTCTGAAC -3 
 elif [ ! -f $o -a -f $input -a ! -f "${input/_R1/_R2}" ];then
-	#bash $BASEDIR/proseq2.0.bsh \
 	echo "single"
-	proseq2.0 \
+	bash $BASEDIR/proseq2.0.bsh \
 	--thread=20 -i $bwaIndex -c $chromInfo -SE -G -T $output/temp -O $output --UMI1=6 -I ${input%\.f*}
 else
 	echo "skip => $o"
@@ -65,10 +63,9 @@ if [ ! -h $o ];then
 	if [ -f $i2 ];then ln -s $i2 $o2; fi
 fi
 
-#bash $BASEDIR/bin/rnaseq_hg38.sh ${sample}_trim $rna_home 
 o=$rna_home/${sample}_trim/${sample}_trim;
 if [ ! -f $o.bam ];then
-	$BASEDIR/rnaseq_hg38 ${sample}_trim $rna_home 
+	bash $BASEDIR/src/rnaseq_hg38.sh ${sample}_trim $rna_home 
 fi
 if [ -f "$o.tdf" ]
 then	

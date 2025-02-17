@@ -12,5 +12,4 @@ mamba env create -f proseq_env.yml
 ```
 mamba activate proseq
 chroseq.sh 
-
 ```
