@@ -1,6 +1,11 @@
 # chroseq-pub
 - source code reference: https://github.com/Danko-Lab/proseq2.0
 
+- make a virtual env
+```
+mamba create -n proseq
+mamba activate proseq
+```
 - install proseq2 and dependent tools 
 https://github.com/Danko-Lab/proseq2.0
 
