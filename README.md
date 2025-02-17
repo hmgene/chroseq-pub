@@ -1,6 +1,12 @@
 # chroseq-pub
 - source code reference: https://github.com/Danko-Lab/proseq2.0
 
+- install prerequisite
+```
+mamba env create -f proseq_env.yml
+mamba activate proseq
+```
+
 - install proseq2 and dependent tools 
 https://github.com/Danko-Lab/proseq2.0
 
@@ -16,11 +22,9 @@ The pipelines depend on several common bioinformatics tools:
  bedops (https://bedops.readthedocs.io/en/latest/)
  bedGraphToBigWig (from the Kent source utilities http://hgdownload.cse.ucsc.edu/admin/exe/)
 ```
+Copy them to the {mamba_base}/proseq/bin folder
+{mamba_base} := mamba base after activating the environmen
 
-- install prerequisite
-```
-mamba env create -f proseq_env.yml
-```
 - run
 ```
 mamba activate proseq
