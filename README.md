@@ -3,7 +3,7 @@
 
 - make a virtual env
 ```
-mamba create -n proseq -f 
+mamba create -n proseq -f environment.yml
 mamba activate proseq
 ```
 - install proseq2 and dependent tools 
