@@ -1,0 +1,15 @@
+name: proseq
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - cutadapt
+  - seqtk
+  - bwa
+  - samtools
+  - bedtools
+  - perl
+  - wget
+  - unzip
+  - pip
